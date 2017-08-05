@@ -5,23 +5,42 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
-    title :'Article-one | Rakesh Singh',
-    heading :'Article-one',
-    date :'5 july 2017',
-    content :`<p> This is the first article. This is the first article. This is the first article. This is the first article.
-                This is the first article.This is the first article. This is the first article. This is the first article. 
-                This is the first article. This is the first article. This is the first article. This is the first article.
-                </p>
-                <p> This is the first article. This is the first article. This is the first article. This is the first article.
-                This is the first article.This is the first article. This is the first article. This is the first article. 
-                This is the first article. This is the first article. This is the first article. This is the first article.
-                </p>
-                <p> This is the first article. This is the first article. This is the first article. This is the first article.
-                This is the first article.This is the first article. This is the first article. This is the first article. 
-                This is the first article. This is the first article. This is the first article. This is the first article.
+var articles = {
+   'article-one':{
+        title :'Article-one | Rakesh Singh',
+        heading :'Article-one',
+        date :'5 july 2017',
+        content :`<p> This is the first article. This is the first article. This is the first article. This is the first article.
+                    This is the first article.This is the first article. This is the first article. This is the first article. 
+                    This is the first article. This is the first article. This is the first article. This is the first article.
+                    </p>
+                    <p> This is the first article. This is the first article. This is the first article. This is the first article.
+                    This is the first article.This is the first article. This is the first article. This is the first article. 
+                    This is the first article. This is the first article. This is the first article. This is the first article.
+                    </p>
+                    <p> This is the first article. This is the first article. This is the first article. This is the first article.
+                    This is the first article.This is the first article. This is the first article. This is the first article. 
+                    This is the first article. This is the first article. This is the first article. This is the first article.
+                    </p>`
+    },
+   'article-two ':{
+        title :'Article-two | Rakesh Singh',
+        heading :'Article-two',
+        date :'5 August 2017',
+        content :`<p>
+                    This is the Second article.
                 </p>`
-};
+    },
+    'article=three':{
+        title :'Article-three | Rakesh Singh',
+        heading :'Article-Three',
+        date :'5 August 2017',
+        content :`<p> 
+                    This is the Third article.
+                </p>`
+    }
+ };
+ 
 function createTemplate(data){
     var title = data.title;
     var heading = data.heading;
@@ -58,16 +77,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req,res){
-    res.send(createTemplate(articleOne));
-});
-
-app.get('/article-two', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName', function(req,res){
+    //articleName == articleOne.
+    //articles[articleName]== {} content object for article one.
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
