@@ -23,7 +23,7 @@ var articles = {
                     This is the first article. This is the first article. This is the first article. This is the first article.
                     </p>`
     },
-   'article-two ':{
+   'article-two':{
         title :'Article-two | Rakesh Singh',
         heading :'Article-two',
         date :'5 August 2017',
@@ -31,7 +31,7 @@ var articles = {
                     This is the Second article.
                 </p>`
     },
-    'article=three':{
+   'article-three':{
         title :'Article-three | Rakesh Singh',
         heading :'Article-Three',
         date :'5 August 2017',
