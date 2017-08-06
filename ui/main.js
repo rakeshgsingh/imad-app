@@ -18,7 +18,7 @@ button.onclick = function(){
             }
             
         }
-        //if not ignore it
+        //Not done yet
     };
     //make a request
         request.open('GET','http://rakeshgsingh.imad.hasura-app.io/counter', true);
