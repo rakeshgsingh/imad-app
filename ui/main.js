@@ -3,13 +3,14 @@ var button = document.getElementById("counter");
 
 button.onclick = function(){
     
-   //Creat a request to the counter endpoint. 
+   //Creat a request 
     var request = new XMLHttpRequest();
     
     //capture the response and stored in a variable
     request.onreadystatechange = function(){
-        if(request.readyState === XMLHttpRequest.done){
+        if(request.readyState === XMLHttpRequest.Done){
             //take some action
+            
             if(request.status === 200){
               var counter =  request.responseText;
              var span = document.getElementById("count");
@@ -20,6 +21,6 @@ button.onclick = function(){
         //if not ignore it
     };
     //make a request
-    request.open('GET','http://rakeshgsingh.imad.hasura-app.io/counter', true);
-    request.send(null);
-  };
+        request.open('GET','http://rakeshgsingh.imad.hasura-app.io/counter', true);
+        request.send(null);
+ };
