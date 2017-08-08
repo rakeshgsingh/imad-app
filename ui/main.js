@@ -1,4 +1,4 @@
-//counter code
+//Counter code
 var button = document.getElementById("counter");
 button.onclick = function(){
    //Creat a request object
@@ -20,7 +20,7 @@ button.onclick = function(){
         request.send(null);
  };
  
- // submit name
+ // Submit name
  var submit = document.getElementById("submit_btn");
  submit.onclick = function(){
     //Creat a request object
@@ -46,6 +46,6 @@ button.onclick = function(){
          var nameInput = document.getElementById("name");
          var name = nameInput.value;
          request.open('GET','http://rakeshgsingh.imad.hasura-app.io/submit-name?name=' + name, true);
-        request.send(null);
+         request.send(null);
  };     
  
