@@ -5,9 +5,9 @@ button.onclick = function(){
     var request = new XMLHttpRequest();
     //capture the response and stored in a variable
     request.onreadystatechange = function(){
-        if(request.readyState === XMLHttpRequest.Done){
+       // if(request.readyState === XMLHttpRequest.Done){
             //take some action
-            if(request.status === 200){
+            if(request.readyState === 4 && request.status === 200){
               var counter =  request.responseText;
              var span = document.getElementById("count");
              span.innerHTML = counter.toString(); 
@@ -27,9 +27,9 @@ button.onclick = function(){
     var request = new XMLHttpRequest();
     //capture the response and stored in a variable
     request.onreadystatechange = function(){
-        if(request.readyState === XMLHttpRequest.Done){
+       // if(request.readyState === XMLHttpRequest.Done){
             //take some action
-             if(request.status === 200){
+             if(request.readystate === 4 && request.status === 200){
                 //capture a list of name and render it as a list.
              var names = request.responseText;
              names = JSON.parse(names);
