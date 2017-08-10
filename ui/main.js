@@ -29,7 +29,7 @@ button.onclick = function(){
     request.onreadystatechange = function(){
        // if(request.readyState === XMLHttpRequest.Done){
             //take some action
-             if(request.readystate === 4 && request.status === 200){
+             if(request.readyState === 4 && request.status === 200){
                 //capture a list of name and render it as a list.
              var names = request.responseText;
              names = JSON.parse(names);
