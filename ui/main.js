@@ -12,7 +12,7 @@ button.onclick = function(){
              var span = document.getElementById("count");
              span.innerHTML = counter.toString(); 
             }
-        }
+        //}
         //Not done yet
     };
     //make a request
@@ -39,7 +39,7 @@ button.onclick = function(){
              }
                  document.getElementById("namelist").innerHTML = list;
         }
-    }          
+   // }          
              //not done yet 
   };
         //make a request
