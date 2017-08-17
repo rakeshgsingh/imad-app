@@ -14,7 +14,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-//var articles = {
+/*var articles = {
    'article-one':{
         title :'Article-one | Rakesh Singh',
         heading :'Article-one',
@@ -48,7 +48,7 @@ app.use(morgan('combined'));
                     This is the Third article.
                 </p>`
     }
- };
+ };*/
  
 function createTemplate(data){
     var title = data.title;
