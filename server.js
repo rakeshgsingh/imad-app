@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 
+// Database configuration
 var config = {
   user : 'rakeshgsingh',
   database : 'rakeshgsingh',
@@ -14,42 +15,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-/*var articles = {
-   'article-one':{
-        title :'Article-one | Rakesh Singh',
-        heading :'Article-one',
-        date :'5 july 2017',
-        content :`<p> This is the first article. This is the first article. This is the first article. This is the first article.
-                    This is the first article.This is the first article. This is the first article. This is the first article. 
-                    This is the first article. This is the first article. This is the first article. This is the first article.
-                    </p>
-                    <p> This is the first article. This is the first article. This is the first article. This is the first article.
-                    This is the first article.This is the first article. This is the first article. This is the first article. 
-                    This is the first article. This is the first article. This is the first article. This is the first article.
-                    </p>
-                    <p> This is the first article. This is the first article. This is the first article. This is the first article.
-                    This is the first article.This is the first article. This is the first article. This is the first article. 
-                    This is the first article. This is the first article. This is the first article. This is the first article.
-                    </p>`
-    },
-   'article-two':{
-        title :'Article-two | Rakesh Singh',
-        heading :'Article-two',
-        date :'5 August 2017',
-        content :`<p>
-                    This is the Second article.
-                </p>`
-    },
-   'article-three':{
-        title :'Article-three | Rakesh Singh',
-        heading :'Article-Three',
-        date :'5 August 2017',
-        content :`<p> 
-                    This is the Third article.
-                </p>`
-    }
- };*/
- 
 function createTemplate(data){
     var title = data.title;
     var heading = data.heading;
@@ -87,6 +52,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+// Connect the database for Table test
 var pool = new Pool(config);
 app.get('/test-db', function(req, res){
     //make a select request
