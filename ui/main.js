@@ -69,8 +69,8 @@ button.onclick = function(){
          var password = document.getElementById("password").value;
          console.log(username);
          console.log(password);
-         request.setRequestHeader('content-Type', 'application/json');
          request.open('POST','http://rakeshgsingh.imad.hasura-app.io/login', true);
+         request.setRequestHeader('Content-Type', 'application/json');
          request.send(JSON.stringify({username: username, password: password}));
  };     
  
