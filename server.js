@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(session({
     secret: 'someRandomSecretValue',
     //resave: true,
-    saveUninitialized: true,
+    //saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
