@@ -40,7 +40,7 @@
         var password = document.getElementById('password').value;
         console.log(username);
         console.log(password);
-        request.open('POST', 'rakeshgsingh.imad.hasura-app.io/login', true);
+        request.open('POST', 'http://rakeshgsingh.imad.hasura-app.io/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
         submit.value = 'Logging in...';
@@ -71,7 +71,7 @@
         var password = document.getElementById('password').value;
         console.log(username);
         console.log(password);
-        request.open('POST', '/create-user', true);
+        request.open('POST', 'http://rakeshgsingh.imad.hasura-app.io/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
         register.value = 'Registering...';
@@ -100,7 +100,7 @@ function loadLogin () {
         }
     };
     
-    request.open('GET', '/check-login', true);
+    request.open('GET', 'http://rakeshgsingh.imad.hasura-app.io/check-login', true);
     request.send(null);
 }
 
@@ -126,7 +126,7 @@ function loadArticles () {
         }
     };
     
-    request.open('GET', '/get-articles', true);
+    request.open('GET', 'http://rakeshgsingh.imad.hasura-app.io/get-articles', true);
     request.send(null);
 }
 
