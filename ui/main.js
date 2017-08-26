@@ -9,7 +9,7 @@
         // Capture the response and store it in a variable
         request.onreadystatechange = function () {
           //if (request.readyState === XMLHttpRequest.DONE) {
-               if (request.readyState === 4) {
+               if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
                   submit.value = 'Sucess!';
@@ -46,7 +46,7 @@
         
         // Capture the response and store it in a variable
         request.onreadystatechange = function () {
-          if (request.readyState === 4) {
+          if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
                   alert('User created successfully');
