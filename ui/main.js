@@ -92,7 +92,7 @@ function loadLogin () {
         }
     };
     
-    request.open('GET', 'http://rakeshgsingh.imad.hasura-app.io/check-login', true);
+    request.open('GET', '/check-login', true);
     request.send(null);
 }
 
